@@ -1,0 +1,6 @@
+# resource folders
+node_modules/*
+!node_modules/postcss-spacer
+
+# misc files
+.DS_Store

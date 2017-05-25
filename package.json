@@ -1,0 +1,10 @@
+{
+  "name": "plug",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-postcss": "^0.8.0",
+    "sugarss": "^1.0.0"
+  }
+}
