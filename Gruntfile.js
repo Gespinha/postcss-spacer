@@ -17,9 +17,12 @@ module.exports = function (grunt) {
         processors: [
           require('postcss-spacer')({
             'comments': {
-              pattern: ['/* --', 'bkbjkk', 'faded', '6789y'],
               before: 2,
               after: 2,
+              debug: true
+            },
+            'rules': {
+              before: 1,
               debug: true
             }
           })
