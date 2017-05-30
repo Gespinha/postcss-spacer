@@ -25,7 +25,7 @@ This plugin can be used with pure CSS, SCSS, Sass or even Less. Pure CSS is supp
 - __Sass__: [`sugarss`]
 - __Less__: [`postcss-less`]
 
-Note: to use a syntax parser you'll have to set it as a dependency (`syntax: require()`) on the `syntax` option of [PostCSS] like this, for example:
+Note: to use a syntax parser you'll have to set it as a dependency (`require()`) on the `syntax` option of [PostCSS] like this, for example:
 
 ```js
 grunt.initConfig({
