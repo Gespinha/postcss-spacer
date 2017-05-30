@@ -1,8 +1,8 @@
 # PostCSS Spacer
 
-__PostCSS Spacer__ is a [PostCSS] plugin for normalising space and line breaks on your stylesheets.
+__PostCSS Spacer__ is a [PostCSS] plugin for normalising spaces between lines on your stylesheets.
 
-### Main features:
+Main features:
 - Set the space before or after certain lines
 - Define specific options for different types of lines
 - Target only lines with specific patterns on them
@@ -16,6 +16,29 @@ $ npm install postcss-spacer --save-dev
 ## Usage
 
 This plugin runs as a [PostCSS] processor. To use it simply add it as a dependency on the `processors` option array in the `postcss` task.
+
+### Syntax
+
+This plugin can be used with pure CSS, SCSS, Sass or even Less. Pure CSS is supported by [PostCSS] natively, however to work with SCSS, Sass or Less you'll need to use a custom syntax parser such as:
+
+- __SCSS__: [`postcss-scss`]
+- __Sass__: [`sugarss`]
+- __Less__: [`postcss-less`]
+
+Note: to use a syntax parser you'll have to set it as a dependency (`syntax: require()`) on the `syntax` option of [PostCSS] like this, for example:
+
+```js
+grunt.initConfig({
+    postcss: {
+      options: {
+        processors: [
+          require('postcss-spacer')({ /* plugin options */ })
+        ],
+        syntax: require('sugarss')
+      },
+    }
+});
+```
 
 ### Grunt:
 
@@ -36,29 +59,6 @@ grunt.initConfig({
 });
 
 grunt.loadNpmTasks('grunt-postcss');
-```
-
-### Syntax
-
-This plugin can be used with pure CSS, SCSS, Sass or even Less. Pure CSS is supported by [PostCSS] natively, however to work with SCSS, Sass or Less you'll need to use a custom syntax parser such as:
-
-- __SCSS__: [`postcss-scss`]
-- __Sass__: [SugarSS]
-- __Less__: [`postcss-less`]
-
-Note: to use a syntax parser you'll have to set it as a dependency (`syntax: require()`) on the `syntax` option of [PostCSS] like this, for example:
-
-```js
-grunt.initConfig({
-    postcss: {
-      options: {
-        processors: [
-          require('postcss-spacer')({ /* plugin options */ })
-        ],
-        syntax: require('sugarss')
-      },
-    }
-});
 ```
 
 ## Options
@@ -98,8 +98,8 @@ Supported line types:
 
 ### Line Options
 
-- `before` (number): **false** : targets all types of lines
-- `after` (number): **false** : targets comments held within `/**/`
+- `before` (number): **false** : adds empty lines before the target line
+- `after` (number): **false** : adds empty lines after the target line
 
 Example: 
 
@@ -135,7 +135,7 @@ body{
 }
 ```
 
-Note: adding `0` as a value on any of the above options will remove the spacing on that specific area of a line.
+Note: adding `0` as a value on any of the above options will remove the empty lines on that specific area of a line.
 
 ### Patterns
 
@@ -191,14 +191,11 @@ Each line type can hold its one `debug` mode, like so:
 
 ## Upcoming Features
 
-**More verbose error messages**
-Error messages should be spot on the issue that is causing the process to fail.
+**More verbose error messages**: Error messages should be spot on the issue that is causing the process to fail.
 
-**Break task when error occurs**
-When an error is found on the process, or something went wrong, the task should break.
+**Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
 
-**More flexible debug mode**
-If you just want to run the debug process on all of the line types at once, you can set it on the `all` handle, for example:
+**More flexible debug mode**: If you just want to run the debug process on all of the line types at once, you can set it on the `all` handle, for example:
 
 ```js
 'all': {
@@ -215,4 +212,4 @@ If you just want to run the debug process on all of the line types at once, you 
 [`postcss-scss`]: https://github.com/postcss/postcss-scss
 [`postcss-less`]: https://github.com/shellscape/postcss-less
 [`grunt-postcss`]: https://github.com/nDmitry/grunt-postcss
-[SugarSS]: https://github.com/postcss/sugarss
+[`sugarss`]: https://github.com/postcss/sugarss
