@@ -112,6 +112,7 @@ __JS__
 ```
 
 __CSS__
+
 Before:
 ```css
 /* ===== MAIN STYLES ===== */
@@ -119,6 +120,7 @@ body{
   background: #fff
 }
 ```
+
 After:
 ```css
 
@@ -152,6 +154,7 @@ __JS__
 ```
 
 __CSS__
+
 Before:
 ```css
 /* ===== MAIN STYLES ===== */
@@ -159,6 +162,7 @@ body{
   background: #fff
 }
 ```
+
 After:
 ```css
 /* ===== MAIN STYLES ===== */
