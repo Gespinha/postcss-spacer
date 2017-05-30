@@ -112,7 +112,6 @@ __JS__
 ```
 
 __CSS__
-
 Before:
 ```css
 /* ===== MAIN STYLES ===== */
@@ -120,7 +119,6 @@ body{
   background: #fff
 }
 ```
-
 After:
 ```css
 
@@ -141,7 +139,7 @@ Note: adding `0` as a value on any of the above options will remove the empty li
 
 If `pattern` is defined, each line of the defined line type will be analysed and if any defined pattern (string) is found, the options are run
 
-- `pattern` (array): **false** : array of patterns to target
+- `pattern` (array) : **false** : array of patterns to target
 
 Example:
 
@@ -154,7 +152,6 @@ __JS__
 ```
 
 __CSS__
-
 Before:
 ```css
 /* ===== MAIN STYLES ===== */
@@ -162,7 +159,6 @@ body{
   background: #fff
 }
 ```
-
 After:
 ```css
 /* ===== MAIN STYLES ===== */
