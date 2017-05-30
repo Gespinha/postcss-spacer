@@ -16,7 +16,7 @@ module.exports = function (grunt) {
       options: {
         processors: [
           require('postcss-spacer')({
-            'commfgsents': {
+            'comments': {
               before: 2,
               after: 2
             }
