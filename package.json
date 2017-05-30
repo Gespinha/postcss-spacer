@@ -1,10 +1,31 @@
 {
-  "name": "plug",
-  "version": "0.0.0",
-  "dependencies": {},
+  "name": "postcss-spacer",
+  "version": "0.0.1",
+  "description": "PostCSS plugin for normalising spaces between lines on your stylesheets.",
+  "author": "Goncalo Espinha",
+  "keywords": [
+    "postcss",
+    "postcss-plugin",
+    "postcss-modules",
+    "plugin",
+    "css"
+  ],
+  "main": "task.js",
+  "homepage": "https://github.com/gespinha/postcss-spacer",
+  "repository": "gespinha/postcss-spacer",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "postcss": "^5.0.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-postcss": "^0.8.0",
     "sugarss": "^1.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/gespinha/postcss-spacer/issues"
+  },
+  "license": "MIT"
 }
