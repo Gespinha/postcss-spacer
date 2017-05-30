@@ -90,16 +90,16 @@ grunt.initConfig({
 
 Supported line types:
 
-- `all` (object): targets all types of lines
-- `comments` (object): targets comments held within `/**/`
-- `rules` (object): targets CSS rules
-- `declarations` (object): targets CSS declarations
-- `at-rules` (object): targets CSS at-rules
+- `all` (object) : targets all types of lines
+- `comments` (object) : targets comments held within `/**/`
+- `rules` (object) : targets CSS rules
+- `declarations` (object) : targets CSS declarations
+- `at-rules` (object) : targets CSS at-rules
 
 ### Line Options
 
-- `before` (number): **false** : adds empty lines before the target line
-- `after` (number): **false** : adds empty lines after the target line
+- `before` (number) : **false** : adds empty lines before the target line
+- `after` (number) : **false** : adds empty lines after the target line
 
 Example: 
 
@@ -191,11 +191,11 @@ Each line type can hold its one `debug` mode, like so:
 
 ## Upcoming Features
 
-**More verbose error messages**: Error messages should be spot on the issue that is causing the process to fail.
+- **More verbose error messages**: Error messages should be spot on the issue that is causing the process to fail.
 
-**Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
+- **Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
 
-**More flexible debug mode**: If you just want to run the debug process on all of the line types at once, you can set it on the `all` handle, for example:
+- **More flexible debug mode**: If you just want to run the debug process on all of the line types at once, you can set it on the `all` handle, for example:
 
 ```js
 'all': {
