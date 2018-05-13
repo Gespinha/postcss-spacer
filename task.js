@@ -42,6 +42,11 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
     options = options || defaultOptions;
     var updateCount = 0;
 
+    var logColors = {
+      reset: "\x1b[0m",
+      cyan: "\x1b[36m"
+    };
+
     var typeMethods = {
       'all': 'walk',
       'comments': 'walkComments',
@@ -59,14 +64,16 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
           message = '';
 
       if(debug){
-        message += '==== TOTALS ====\n';
+        // totals log
+        message += logColors.cyan + '==== TOTALS ====' + logColors.reset + '\n';
         message += 'Lines type: ' + type + '\n';
         message += 'Lines updated: ' + count + '\n';
         if(patternCount){
           message += 'Patterns found: ' + patternCount + '\n';
         }
-        message += '================';
+        message += logColors.cyan + '================' + logColors.reset;
       } else {
+        // line type log
         message += 'Updated ' + count + ' ' + type;
         if(patternCount){
           message += ' from ' + patternCount + ' pattern' + (patternCount === 1 ? '' : 's');
@@ -82,7 +89,8 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
       if(activePatterns){
         message += 'Patterns: ' + activePatterns + '\n';
       }
-      return console.log(message);
+
+      return console.log(logColors.cyan + '-> ' + logColors.reset + message);
     }
 
     // add line space
@@ -128,7 +136,7 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
     // type process
     function typeProcess(type, pattern){
       if(options[type].debug){
-        console.log('\n==== ' + type.toUpperCase() + ' ====\n');
+        console.log('\n' + logColors.cyan + '==== CHANGED ' + type.toUpperCase() + ' ====' + logColors.reset);
       }
 
       css[typeMethods[type]](function(comment){
