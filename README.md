@@ -193,12 +193,6 @@ Each line type can hold its one `debug` mode, like so:
 
 - **More flexible debug mode**: If you just want to run the debug process on all of the line types at once, you can set it on the `all` handle, for example:
 
-## Changelog
-
-- **[v0.0.3]** **More verbose error messages**: Error messages should be spot on the issue that is causing the process to fail.
-- **[v0.0.2]** **Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
-- **[v0.0.1]** Initial release.
-
 ```js
 'all': {
   debug: true
@@ -208,6 +202,12 @@ Each line type can hold its one `debug` mode, like so:
   after: 2
 },
 ```
+
+## Changelog
+
+- **[v0.0.3]** **More verbose error messages**: Error messages should be spot on the issue that is causing the process to fail.
+- **[v0.0.2]** **Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
+- **[v0.0.1]** Initial release.
 
 [PostCSS]: https://github.com/postcss/postcss
 [`postcss-sorting`]: https://github.com/hudochenkov/postcss-sorting
