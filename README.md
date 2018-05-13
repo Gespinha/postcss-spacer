@@ -196,6 +196,17 @@ Each line type can hold its one `debug` mode, like so:
 - **[v0.0.2]** **Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
 - **[v0.0.1]** Initial release.
 
+## License
+
+The MIT License (MIT)
+Copyright (c) 2018 Goncalo Espinha
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 [PostCSS]: https://github.com/postcss/postcss
 [`postcss-sorting`]: https://github.com/hudochenkov/postcss-sorting
 [`postcss-scss`]: https://github.com/postcss/postcss-scss
