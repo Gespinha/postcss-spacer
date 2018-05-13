@@ -1,6 +1,6 @@
 {
   "name": "postcss-spacer",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PostCSS plugin to format line spacing within your stylesheets.",
   "author": "Goncalo Espinha",
   "keywords": [

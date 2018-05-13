@@ -189,22 +189,9 @@ Each line type can hold its one `debug` mode, like so:
 },
 ```
 
-## Upcoming Features
-
-- **More flexible debug mode**: If you just want to run the debug process on all of the line types at once, you can set it on the `all` handle, for example:
-
-```js
-'all': {
-  debug: true
-},
-'comments': {
-  pattern: ['====='],
-  after: 2
-},
-```
-
 ## Changelog
 
+- **[v0.0.4]** Debug logs now contain colors to make them easier to read.
 - **[v0.0.3]** **More verbose error messages**: Error messages should be spot on the issue that is causing the process to fail.
 - **[v0.0.2]** **Break task when error occurs**: When an error is found on the process, or something went wrong, the task should break.
 - **[v0.0.1]** Initial release.
