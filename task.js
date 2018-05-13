@@ -5,8 +5,8 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
 
   return function (css) {
 
-    // options
-    options = options || {
+    // default options
+    var defaultOptions = {
       'all': {
         pattern: false,
         before: false,
@@ -38,6 +38,8 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
         debug: false
       }
     };
+
+    options = options || defaultOptions;
     var updateCount = 0;
 
     var typeMethods = {
@@ -83,7 +85,7 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
       return console.log(message);
     }
 
-    // helper functions
+    // add line space
     function addLineSpace(type, position){
       return new Array(options[type][position] + 2).join('\n');
     }
@@ -144,19 +146,41 @@ module.exports = postcss.plugin('spacer', function spacer(options) {
       var pattern = options[type].pattern;
 
       if(!pattern && typeMethods.hasOwnProperty(type)){
+        // if all good
         typeProcess(type, false);
       } else if(Array.isArray(pattern) && pattern.length > 0 && typeMethods.hasOwnProperty(type)){
+        // if didn't find the pattern
         typeProcess(type, pattern);
-      } else {
-        console.error('error', 'Comment Pattern options value must be an object');
       }
     }
 
     // run all processes
-    var activeProcesses = Object.keys(options);
+    var validProcesses = Object.keys(defaultOptions),
+        activeProcesses = Object.keys(options);
+
+    function checkOptions(type, opts){
+      var validOptions = Object.getOwnPropertyNames(defaultOptions[type]);
+
+      for(var i = 0; i < opts.length; i++){
+        if(validOptions.indexOf(opts[i]) < 0){
+          throw new Error('"' + opts[i] + '" is not a valid parameter for the "' + type + '" line type object');
+        }
+      }
+    }
 
     for(var i = 0; i < activeProcesses.length; i++){
-      globalProcess(activeProcesses[i]);
+      var currProcess = activeProcesses[i],
+          setOptions = Object.keys(options[currProcess]);
+
+      // if process is valid
+      if(validProcesses.indexOf(currProcess) > -1){
+        // check if properties are valid
+        checkOptions(currProcess, setOptions);
+        // run process
+        globalProcess(currProcess);
+      } else {
+        throw new Error('"' + currProcess + '" is not a valid line type object');
+      }
     }
   }
 });
