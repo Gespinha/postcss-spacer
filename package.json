@@ -1,12 +1,14 @@
 {
   "name": "postcss-spacer",
-  "version": "0.0.1",
-  "description": "PostCSS plugin for normalising spaces between lines on your stylesheets.",
+  "version": "0.0.3",
+  "description": "PostCSS plugin to format line spacing within your stylesheets.",
   "author": "Goncalo Espinha",
   "keywords": [
     "postcss",
     "postcss-plugin",
     "postcss-modules",
+    "spaces",
+    "lines",
     "plugin",
     "css"
   ],
